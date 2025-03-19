@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisola's UK Tax Calculator 💷</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> <!-- PDF Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
+</head>
+<body>
+    <header>
+        <h1>Bisola's UK Tax Calculator 💷</h1>
+        <p>Your go-to tool for **quick and accurate** UK tax calculations.</p>
+        <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    </header>
+
+    <div class="container">
+        <h2>Calculate Your Take-Home Pay</h2>
+        <p>Enter your details below to estimate your **income after tax, national insurance, and deductions**.</p>
+
+        <label for="income">💼 Annual Income (£):</label>
+        <input type="number" id="income" placeholder="e.g. 30000" oninput="calculateTax()">
+
+        <label for="pension">📉 Pension Contributions (£):</label>
+        <input type="number" id="pension" placeholder="e.g. 2000" oninput="calculateTax()">
+
+        <label for="studentLoan">🎓 Student Loan Repayment (£):</label>
+        <input type="number" id="studentLoan" placeholder="e.g. 1000" oninput="calculateTax()">
+
+        <label for="otherDeductions">💳 Other Deductions (£):</label>
+        <input type="number" id="otherDeductions" placeholder="e.g. 500" oninput="calculateTax()">
+
+        <button onclick="downloadPDF()">📄 Download Report (PDF)</button>
+
+        <h3 id="result"></h3>
+
+        <button onclick="toggleChart()">📊 Toggle Graph Type</button>
+        <canvas id="taxChart" width="400" height="300"></canvas>
+    </div>
+
+    <footer>
+        <p>💡 Developed by <b>Bisola</b> | All rights reserved &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
